@@ -82,7 +82,7 @@ Resources:
       DomainName: !Ref CustomDomain
       ApiId: !Ref HttpApi
       Stage: dev
-      ApiMappingKey: 'cds-au'
+      ApiMappingKey: 'cds'
 
   DnsRecord:
     Type: AWS::Route53::RecordSet
@@ -147,7 +147,7 @@ Resources:
       Name: LambdaAuthorizer
       ApiId: !Ref HttpApi
       AuthorizerType: REQUEST
-      EnableSimpleResponses: true
+      EnableSimpleResponses: false
       AuthorizerPayloadFormatVersion: 2.0
       AuthorizerUri: !Join
         - ''
@@ -158,9 +158,10 @@ Resources:
           - ':lambda:path/2015-03-31/functions/'
           - !GetAtt CustomAuthFunction.Arn
           - /invocations
-      AuthorizerResultTtlInSeconds: 5
+      AuthorizerResultTtlInSeconds: 3600
       IdentitySource:
-        - $request.header.Authorization
+        - $request.header.x-forwarded-for
+        - $context.identity.clientCert.clientCertPem
 
   # RouteAuthoriserAttachment:
   #   Type: AWS::ApiGatewayV2::Route

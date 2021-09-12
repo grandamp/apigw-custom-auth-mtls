@@ -246,3 +246,11 @@ $RECYCLE.BIN/
 # Project specific ignores
 .aws-sam
 samconfig.toml
+
+# TEJ testing
+app.txt
+events/.event_dev_ocio_ca.json.kate-swp
+keystore-revoked.p12
+keystore.p12
+newcred/
+trusted-certification-authorities.pem

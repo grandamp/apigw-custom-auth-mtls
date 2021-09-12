@@ -1,0 +1,74 @@
+$ aws apigatewayv2 get-authorizers --api-id 4mivbhvsfb
+{
+    "Items": [
+        {
+            "AuthorizerId": "8thg9h",
+            "AuthorizerPayloadFormatVersion": "2.0",
+            "AuthorizerResultTtlInSeconds": 300,
+            "AuthorizerType": "REQUEST",
+            "AuthorizerUri": "arn:aws:apigateway:us-west-1:lambda:path/2015-03-31/functions/arn:aws:lambda:us-west-1:216896468348:function:CertRevocationCheck/invocations",
+            "EnableSimpleResponses": false,
+            "IdentitySource": [
+                "$request.header.x-forwarded-for"
+            ],
+            "Name": "LambdaAuthorizer"
+        }
+    ]
+}
+
+
+2021-09-10T17:42:36.526-04:00	START RequestId: 540d4528-8fce-4eba-955e-97b4e1ccfa41 Version: $LATEST
+2021-09-10T17:42:36.527-04:00	Received event:
+
+{
+	"version": "2.0",
+	"type": "REQUEST",
+	"routeArn": "arn:aws:execute-api:us-west-1:216896468348:4mivbhvsfb/dev/GET/v1/banking/accounts",
+	"identitySource": [
+		"69.142.122.205"
+	],
+	"routeKey": "GET /v1/banking/accounts",
+	"rawPath": "/dev/v1/banking/accounts",
+	"rawQueryString": "",
+	"headers": {
+		"accept": "*/*",
+		"content-length": "0",
+		"host": "api.aws.fpki.io",
+		"user-agent": "curl/7.68.0",
+		"x-forwarded-for": "69.142.122.205"
+	},
+	"requestContext": {
+		"accountId": "216896468348",
+		"apiId": "4mivbhvsfb",
+		"authentication": {
+			"clientCert": {
+				"clientCertPem": "-----BEGIN CERTIFICATE-----\nMIIHYzCCBkugAwIBAgIEW3R/PjANBgkqhkiG9w0BAQsFADCBjjELMAkGA1UEBhMC\ndXMxGDAWBgNVBAoTD3Uucy4gZ292ZXJubWVudDEjMCEGA1UECxMaZGVwYXJ0bWVu\ndCBvZiB0aGUgdHJlYXN1cnkxIjAgBgNVBAsTGUNlcnRpZmljYXRpb24gQXV0aG9y\naXRpZXMxHDAaBgNVBAsTE0RldmVsb3BtZW50IE9DSU8gQ0EwHhcNMjEwNzI5MTc0\nNjI4WhcNMjQwNzI5MTgxNjI4WjCBsDELMAkGA1UEBhMCVVMxGDAWBgNVBAoTD1Uu\nUy4gR292ZXJubWVudDEjMCEGA1UECxMaRGVwYXJ0bWVudCBvZiB0aGUgVHJlYXN1\ncnkxJTAjBgNVBAsTHEJ1cmVhdSBvZiB0aGUgRmlzY2FsIFNlcnZpY2UxEDAOBgNV\nBAsTB0RldmljZXMxKTAnBgNVBAMTIDg1Y2U0N2VlMzQ2NTRlMWI4MjE4ZTRlODU4\nN2ZmYzk1MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAmi9LFCaIWsz1\nl/yheHwVjpSXcM6z+I8xMm2HgTrWPBfpeOP6h9vdhhChOzhBdwfRnbUw36skm71D\nbs3Dly9sjlmrGEzp0n4Sp2v0o/dpy74MH8XiFgD1Ui6flKVHI0ceiaEqZ4d2UuMm\nHBJlXVtsEJ/ttRpEAvbECeQEKqeVh66g1m19gcBabxZ3mdX1iAdbgMgZTOTsoIVM\niLiAUvQercqJF7gsQt1HPeVjSIS+glfprbZ6Op/JWvDhtfGynyl+jk6KFYnYvDA2\nF9YhnH8BVcEO6zY/VGAOgTZmI/Unlc8CTLl2HbRrdcBpy8IMDjjIkXyPpGv1EQkm\n4NkG1xE7AQIDAQABo4IDozCCA58wDgYDVR0PAQH/BAQDAgWgMBEGCWCGSAGG+EIB\nAQQEAwIF4DAdBgNVHSUEFjAUBggrBgEFBQcDAQYIKwYBBQUHAwIwFwYDVR0gBBAw\nDjAMBgpghkgBZQMCATAKMIIBJAYIKwYBBQUHAQEEggEWMIIBEjAkBggrBgEFBQcw\nAYYYaHR0cDovL2Rldm9jc3AudHJlYXMuZ292MDYGCCsGAQUFBzAChipodHRwOi8v\nZGV2cGtpLnRyZWFzLmdvdi9kZXZ0b2NhX2VlX2FpYS5wN2MwgbEGCCsGAQUFBzAC\nhoGkbGRhcDovL2RldmxkYXAudHJlYXMuZ292L291PURldmVsb3BtZW50JTIwT0NJ\nTyUyMENBLG91PUNlcnRpZmljYXRpb24lMjBBdXRob3JpdGllcyxvdT1EZXBhcnRt\nZW50JTIwb2YlMjB0aGUlMjBUcmVhc3VyeSxvPVUuUy4lMjBHb3Zlcm5tZW50LGM9\nVVM/Y0FDZXJ0aWZpY2F0ZTtiaW5hcnkwLQYDVR0RBCYwJIEic3NvLm9wZXJhdGlv\nbnNAZmlzY2FsLnRyZWFzdXJ5LmdvdjCCAakGA1UdHwSCAaAwggGcMC6gLKAqhiho\ndHRwOi8vZGV2cGtpLnRyZWFzLmdvdi9EZXZfT0NJT19DQTQuY3JsMIIBaKCCAWSg\nggFgpIGhMIGeMQswCQYDVQQGEwJ1czEYMBYGA1UEChMPdS5zLiBnb3Zlcm5tZW50\nMSMwIQYDVQQLExpkZXBhcnRtZW50IG9mIHRoZSB0cmVhc3VyeTEiMCAGA1UECxMZ\nQ2VydGlmaWNhdGlvbiBBdXRob3JpdGllczEcMBoGA1UECxMTRGV2ZWxvcG1lbnQg\nT0NJTyBDQTEOMAwGA1UEAxMFQ1JMNTOGgblsZGFwOi8vZGV2bGRhcC50cmVhcy5n\nb3YvY249Q1JMNTMsb3U9RGV2ZWxvcG1lbnQlMjBPQ0lPJTIwQ0Esb3U9Q2VydGlm\naWNhdGlvbiUyMEF1dGhvcml0aWVzLG91PWRlcGFydG1lbnQlMjBvZiUyMHRoZSUy\nMHRyZWFzdXJ5LG89dS5zLiUyMGdvdmVybm1lbnQsYz11cz9jZXJ0aWZpY2F0ZVJl\ndm9jYXRpb25MaXN0O2JpbmFyeTAfBgNVHSMEGDAWgBQvV0yMS7QTjFJxCLQ8fBiN\nSRl/ojAdBgNVHQ4EFgQUYXdz+nE/eOvTFIIRdrkp+OSOiHYwDQYJKoZIhvcNAQEL\nBQADggEBAIivbK0g4j6hz6atK83MzPf+t2IO/WD/D5umcN6Z7/aHcjXyKfL/defP\nesnPqNPHHX0hA4McSiKWJ5f/JzkzQZmIGSSlNCLakwKVJq/kEERERcepFZy2YWRI\np3+Gu//ivtKLw2P6RST+de6atMKQrjDPBuC0Tjl6wray33hT2rdhpe33QZ/kV3nG\ncJey55JEZShdDIZc7NdVb5zXmRpxPHcZqOhu/tSDrr/gSbLlFPCan7tGARQs7l5t\nDEv49KuE1JOJa2P1WAqdvTs+XVwnlKU6lZun+c4JCwBw5kyNyauFYls55R8Xsflp\nHITkqhhxEBUzcaLkBZz6WLNtwx+8CCI=\n-----END CERTIFICATE-----\n",
+				"issuerDN": "C=us,O=u.s. government,OU=department of the treasury,OU=Certification Authorities,OU=Development OCIO CA",
+				"serialNumber": "1534361406",
+				"subjectDN": "C=US,O=U.S. Government,OU=Department of the Treasury,OU=Bureau of the Fiscal Service,OU=Devices,CN=85ce47ee34654e1b8218e4e8587ffc95",
+				"validity": {
+					"notAfter": "Jul 29 18:16:28 2024 GMT",
+					"notBefore": "Jul 29 17:46:28 2021 GMT"
+				}
+			}
+		},
+		"domainName": "api.aws.fpki.io",
+		"domainPrefix": "api",
+		"http": {
+			"method": "GET",
+			"path": "/dev/v1/banking/accounts",
+			"protocol": "HTTP/1.1",
+			"sourceIp": "10.1.12.64:57412",
+			"userAgent": "curl/7.68.0"
+		},
+		"requestId": "Fd2j5h6NSK4EMjg=",
+		"routeKey": "GET /v1/banking/accounts",
+		"stage": "dev",
+		"time": "10/Sep/2021:21:42:35 +0000",
+		"timeEpoch": 1631310155914
+	}
+}
+
+2021-09-10T17:42:36.527-04:00	The certificate is ok
+2021-09-10T17:42:36.530-04:00	END RequestId: 540d4528-8fce-4eba-955e-97b4e1ccfa41
+2021-09-10T17:42:36.530-04:00	REPORT RequestId: 540d4528-8fce-4eba-955e-97b4e1ccfa41 Duration: 3.64 ms Billed Duration: 4 ms Memory Size: 128 MB Max Memory Used: 70 MB Init Duration: 425.59 ms

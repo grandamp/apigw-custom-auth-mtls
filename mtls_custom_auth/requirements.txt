@@ -1,2 +1,1 @@
-certvalidator
-asn1crypto
+requests
