@@ -1,5 +1,14 @@
 # apigw-custom-auth-mtls lambda-authoriser
 
+Fork of [/kmkale/apigw-custom-auth-mtls](https://github.com/kmkale/apigw-custom-auth-mtls)
+
+## Planned Updates
+
+- Licence and any attribution to the original authoriser, and
+- integrated Policy example from [Amazon API Gateway - Custom Authorizer Blueprints for AWS Lambda](https://github.com/awslabs/aws-apigateway-lambda-authorizer-blueprints/blob/master/blueprints/python/api-gateway-authorizer-python.py)
+
+## Begin upstream content
+
 This project contains source code and supporting files for a serverless application that you can deploy with the SAM CLI. This code complements my blog post "mTLS auth with AWS API Gateway- Part 2 - check certificate revocation"
 
 It includes the following files and folders.
