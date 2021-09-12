@@ -4,7 +4,8 @@ Fork of [/kmkale/apigw-custom-auth-mtls](https://github.com/kmkale/apigw-custom-
 
 ## Planned Updates
 
-- Licence and any attribution to the original authoriser, and
+- Change authorizer to use os vars for API_ENDPOINT and VSS_POLICY, explaining Treasury VSS requirements;
+- Licence and any attribution to the original authoriser, and;
 - integrated Policy example from [Amazon API Gateway - Custom Authorizer Blueprints for AWS Lambda](https://github.com/awslabs/aws-apigateway-lambda-authorizer-blueprints/blob/master/blueprints/python/api-gateway-authorizer-python.py)
 
 ## Begin upstream content
