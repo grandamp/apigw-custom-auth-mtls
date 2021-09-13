@@ -10,7 +10,7 @@ Fork of [/kmkale/apigw-custom-auth-mtls](https://github.com/kmkale/apigw-custom-
 
 ## Begin upstream content
 
-This project contains source code and supporting files for a serverless application that you can deploy with the SAM CLI. This code complements my blog post "mTLS auth with AWS API Gateway- Part 2 - check certificate revocation"
+This project contains source code and supporting files for a serverless application that you can deploy with the SAM CLI. This code complements my blog post ["mTLS auth with AWS API Gateway- Part 2 - check certificate revocation"](https://medium.com/contino-engineering/mutual-tls-auth-with-aws-api-gateway-part-2-check-certificate-revocation-8b86538afe0)
 
 It includes the following files and folders.
 
