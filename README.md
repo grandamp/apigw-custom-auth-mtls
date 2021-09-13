@@ -70,8 +70,10 @@ Test a single function by invoking it directly with a test event. An event is a 
 
 Run functions locally and invoke them with the `sam local invoke` command.
 
+- TEJ: Updated within this repo to provide a [FPKI](https://playbooks.idmanagement.gov/fpki/) example, given the [Treasury VSS](https://github.com/GSA/ficam-scvp-testing/blob/master/utilities/vss2/README.md) logic of the updated Authorizer:
+
 ```bash
-lambda-authoriser$ sam local invoke CustomAuthFunction --event events/event_letsencrypt.json
+lambda-authoriser$ sam local invoke CustomAuthFunction --event events/event_dev_ocio_ca.json
 ```
 
 ## Fetch, tail, and filter Lambda function logs
