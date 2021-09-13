@@ -1,11 +1,12 @@
 import json
+import os
 import requests
-  
+
 # define the api-endpoint 
-API_ENDPOINT = "https://vssapi-dev.treasury.gov/vss/rest/"
+apiEndpoint = os.environ.get('API_ENDPOINT')
 
 # define the validation policy
-VSS_POLICY = "1.3.6.1.5.5.7.19.1"
+vssPolicy = os.environ.get('VSS_POLICY')
 
 def pem_to_vsscert(event):
     # strip PEM tags and newlines for out VSS request
@@ -19,14 +20,14 @@ def lambda_handler(event, context):
     print(json.dumps(evtJson))
     cert = pem_to_vsscert(event)
     # data to be sent to api
-    data = {"validationPolicy":VSS_POLICY,
+    data = {"validationPolicy":vssPolicy,
             "wantBackList":[],
             "x509CertificateList":[{
                 "x509Certificate":cert
                 }]
             }
     # sending post request and saving response as response object
-    response = requests.post(url = API_ENDPOINT, json=data)
+    response = requests.post(url = apiEndpoint, json=data)
     # parse the VSS response
     resJson = response.json()
     # parse the individaul resultByCertificate
