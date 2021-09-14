@@ -38,6 +38,8 @@ def lambda_handler(event, context):
     # if the validationResultToken is "FAIL", then respond with access denial, and provide the VSS invalidityReasonText
     if validationResultToken == "FAIL":
         invalidityReasonText = certResult["resultByCertificate"]["validationFailureData"]["invalidityReasonList"][0]["invalidityReasonText"]
+        errJson = {"validationResultToken": "FAIL", "vssResponse": resJson}
+        print(json.dumps(errJson))
         return {
             "principalId": principalId,
             "policyDocument": {
@@ -53,6 +55,8 @@ def lambda_handler(event, context):
         } 
     # otherwise, grant access
     else:
+        successJson = {"validationResultToken": "SUCCESS", "vssResponse": resJson}
+        print(json.dumps(successJson))
         return {
             "principalId": principalId,
             "policyDocument": {
