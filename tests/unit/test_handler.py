@@ -22,6 +22,7 @@ def test_lambda_handler(apigw_event, mocker):
     print("Received ret: " + json.dumps(ret, indent=2))
 
     # Probably need to refactor, due to "EnableSimpleResponses: false"
+    # TODO: Add example event with non-revoked cert, and verify resulting policy doc.
     assert "isAuthorized" in ret
     assert ret["isAuthorized"] == "true"
     assert ret["context"]["exception"] == None
