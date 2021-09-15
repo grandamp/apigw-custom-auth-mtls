@@ -1,29 +1,7 @@
-$ aws apigatewayv2 get-authorizers --api-id 4mivbhvsfb
-{
-    "Items": [
-        {
-            "AuthorizerId": "8thg9h",
-            "AuthorizerPayloadFormatVersion": "2.0",
-            "AuthorizerResultTtlInSeconds": 300,
-            "AuthorizerType": "REQUEST",
-            "AuthorizerUri": "arn:aws:apigateway:us-west-1:lambda:path/2015-03-31/functions/arn:aws:lambda:us-west-1:216896468348:function:CertRevocationCheck/invocations",
-            "EnableSimpleResponses": false,
-            "IdentitySource": [
-                "$request.header.x-forwarded-for"
-            ],
-            "Name": "LambdaAuthorizer"
-        }
-    ]
-}
-
-
-2021-09-10T17:42:36.526-04:00	START RequestId: 540d4528-8fce-4eba-955e-97b4e1ccfa41 Version: $LATEST
-2021-09-10T17:42:36.527-04:00	Received event:
-
 {
 	"version": "2.0",
 	"type": "REQUEST",
-	"routeArn": "arn:aws:execute-api:us-west-1:216896468348:4mivbhvsfb/dev/GET/v1/banking/accounts",
+	"routeArn": "arn:aws:execute-api:us-west-1:acct:4mivbhvsfb/dev/GET/v1/banking/accounts",
 	"identitySource": [
 		"69.142.122.205"
 	],
@@ -38,7 +16,7 @@ $ aws apigatewayv2 get-authorizers --api-id 4mivbhvsfb
 		"x-forwarded-for": "69.142.122.205"
 	},
 	"requestContext": {
-		"accountId": "216896468348",
+		"accountId": "acct",
 		"apiId": "4mivbhvsfb",
 		"authentication": {
 			"clientCert": {
@@ -68,7 +46,3 @@ $ aws apigatewayv2 get-authorizers --api-id 4mivbhvsfb
 		"timeEpoch": 1631310155914
 	}
 }
-
-2021-09-10T17:42:36.527-04:00	The certificate is ok
-2021-09-10T17:42:36.530-04:00	END RequestId: 540d4528-8fce-4eba-955e-97b4e1ccfa41
-2021-09-10T17:42:36.530-04:00	REPORT RequestId: 540d4528-8fce-4eba-955e-97b4e1ccfa41 Duration: 3.64 ms Billed Duration: 4 ms Memory Size: 128 MB Max Memory Used: 70 MB Init Duration: 425.59 ms
